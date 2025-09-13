@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldwide Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 Worldwide Weather App</h1>
+
+        <!-- Search Section -->
+        <h2>Search Weather</h2>
+        <input type="text" id="cityInput" placeholder="Enter city, town, village OR ZIP code">
+        <input type="text" id="countryInput" placeholder="Enter 2-letter country code (Optional)">
+        <button id="searchBtn">Search</button>
+        <div id="weatherDisplay"></div>
+
+        <!-- Comparison Section -->
+        <h2>Compare Two Places</h2>
+        <div class="compare-row">
+            <input type="text" id="city1" placeholder="Place 1 (City or ZIP)">
+            <input type="text" id="country1" placeholder="Country code (Optional)">
+        </div>
+        <div class="compare-row">
+            <input type="text" id="city2" placeholder="Place 2 (City or ZIP)">
+            <input type="text" id="country2" placeholder="Country code (Optional)">
+        </div>
+        <button id="compareBtn">Compare</button>
+        <div id="compareDisplay"></div>
+
+        <!-- Favorites Section -->
+        <h2>Favorites</h2>
+        <input type="text" id="favCity" placeholder="Enter city/town/village OR ZIP code">
+        <input type="text" id="favCountry" placeholder="Country code (Optional)">
+        <button id="saveBtn">Save</button>
+        <ul id="favoritesList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
