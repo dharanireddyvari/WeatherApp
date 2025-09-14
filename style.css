@@ -1,61 +1,144 @@
+/* General */
 body {
-    font-family: Arial, sans-serif;
-    background: #e0f7fa;
-    padding: 20px;
-    text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #83a4d4, #b6fbff);
+  color: #fff;
 }
 
-.container {
-    max-width: 650px;
-    margin: auto;
-    padding: 20px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 0 15px #aaa;
+header {
+  background: #1e3c72;
+  padding: 20px;
+  text-align: center;
 }
 
-input, button {
-    padding: 10px;
-    margin: 5px;
-    font-size: 16px;
+header h1 {
+  margin: 0;
 }
 
-.compare-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
+nav a {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #ff7e5f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: inline-block;
 }
 
-.compare-row input {
-    width: 48%;
+nav a:hover {
+  background-color: #feb47b;
+  transform: scale(1.05);
 }
 
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-    input, button {
-        width: 100%;
-        margin: 5px 0;
-    }
-    .compare-row {
-        flex-direction: column;
-    }
-    .compare-row input {
-        width: 100%;
-        margin-bottom: 5px;
-    }
+/* Sections */
+.section {
+  display: none;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s;
 }
 
-#weatherDisplay, #compareDisplay {
-    margin-top: 20px;
+.section.active {
+  display: block;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 45%;
+  min-width: 120px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #4facfe;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #00f2fe;
+  transform: scale(1.05);
+}
+
+/* Weather display cards */
+.weather-card {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 15px;
+  color: #333;
+  text-align: left;
 }
 
 ul#favoritesList {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
 }
+
 ul#favoritesList li {
-    background: #b2ebf2;
-    margin: 3px 0;
-    padding: 8px;
-    border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.8);
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.deleteBtn {
+  background-color: #ff4b5c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+.deleteBtn:hover {
+  background-color: #ff1e2d;
+}
+
+.backBtn {
+  background-color: #607d8b;
+}
+
+.backBtn:hover {
+  background-color: #455a64;
+}
+
+@media screen and (max-width: 600px) {
+  input {
+    width: 80%;
+  }
+
+  button, .backBtn {
+    width: 80%;
+  }
 }

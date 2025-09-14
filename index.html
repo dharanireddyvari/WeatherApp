@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worldwide Weather App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌍 Worldwide Weather App</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1>🌍 Worldwide Weather App</h1>
+  <header>
+    <h1>🌍 Worldwide Weather App</h1>
+    <nav>
+      <a href="#" onclick="showSection('searchSection')">🔎 Search Weather</a>
+      <a href="#" onclick="showSection('compareSection')">🌤 Compare Places</a>
+      <a href="#" onclick="showSection('favoritesSection')">⭐ Favorites</a>
+    </nav>
+  </header>
 
-        <!-- Search Section -->
-        <h2>Search Weather</h2>
-        <input type="text" id="cityInput" placeholder="Enter city, town, village OR ZIP code">
-        <input type="text" id="countryInput" placeholder="Enter 2-letter country code (Optional)">
-        <button id="searchBtn">Search</button>
-        <div id="weatherDisplay"></div>
+  <main>
+    <!-- Search Section -->
+    <section id="searchSection" class="section active">
+      <h2>Search Weather</h2>
+      <div class="input-group">
+        <input type="text" id="cityInput" placeholder="City Name" required>
+        <input type="text" id="countryInput" placeholder="Country Code (e.g., IN)" required>
+      </div>
+      <button id="searchBtn">Search</button>
+      <div id="weatherDisplay" class="weather-card"></div>
+      <button class="backBtn" onclick="goBack('searchSection')">⬅ Back</button>
+    </section>
 
-        <!-- Comparison Section -->
-        <h2>Compare Two Places</h2>
-        <div class="compare-row">
-            <input type="text" id="city1" placeholder="Place 1 (City or ZIP)">
-            <input type="text" id="country1" placeholder="Country code (Optional)">
-        </div>
-        <div class="compare-row">
-            <input type="text" id="city2" placeholder="Place 2 (City or ZIP)">
-            <input type="text" id="country2" placeholder="Country code (Optional)">
-        </div>
-        <button id="compareBtn">Compare</button>
-        <div id="compareDisplay"></div>
+    <!-- Compare Section -->
+    <section id="compareSection" class="section">
+      <h2>Compare Weather</h2>
+      <div class="input-group">
+        <input type="text" id="city1" placeholder="City or ZIP 1" required>
+        <input type="text" id="country1" placeholder="Country Code 1" required>
+      </div>
+      <div class="input-group">
+        <input type="text" id="city2" placeholder="City or ZIP 2" required>
+        <input type="text" id="country2" placeholder="Country Code 2" required>
+      </div>
+      <button id="compareBtn">Compare</button>
+      <div id="compareDisplay" class="weather-card"></div>
+      <button class="backBtn" onclick="goBack('compareSection')">⬅ Back</button>
+    </section>
 
-        <!-- Favorites Section -->
-        <h2>Favorites</h2>
-        <input type="text" id="favCity" placeholder="Enter city/town/village OR ZIP code">
-        <input type="text" id="favCountry" placeholder="Country code (Optional)">
-        <button id="saveBtn">Save</button>
-        <ul id="favoritesList"></ul>
-    </div>
+    <!-- Favorites Section -->
+    <section id="favoritesSection" class="section">
+      <h2>Favorites</h2>
+      <div class="input-group">
+        <input type="text" id="favCity" placeholder="City Name" required>
+        <input type="text" id="favCountry" placeholder="Country Code" required>
+      </div>
+      <button id="saveBtn">Save to Favorites</button>
+      <ul id="favoritesList"></ul>
+      <button class="backBtn" onclick="goBack('favoritesSection')">⬅ Back</button>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
